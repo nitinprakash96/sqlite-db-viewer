@@ -452,7 +452,7 @@ def main():
 	dataset = DataSet('sqlite:///%s' % db_file)
 	migrator = dataset._migrator
 	# Bind to PORT if defined, otherwise default to 5000.
-	port = int(os.environ.get('PORT', 5000))
+	port = int(os.environ.get('PORT', options.port))
 	app.run(host=options.host, port=port, debug=options.debug)
 
 
